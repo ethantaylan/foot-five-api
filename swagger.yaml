@@ -1,0 +1,28 @@
+# swagger.yml
+
+openapi: 3.0.0
+info:
+  title: "Foot-Five API"
+  description: "An API to send messages to your WhatsApp group"
+  version: "1.0.0"
+
+servers:
+  - url: "/api"
+
+paths:
+  /message:
+    get:
+      operationId: "message.send_message"
+      tags:
+        - "Message"
+      summary: "Send message to group"
+      parameters:
+        - name: "message"
+          in: "query"
+          description: "The message content to send"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "200":
+          description: "Success"
